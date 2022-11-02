@@ -28,11 +28,6 @@ def main():
     title = Entry(root, width=95)
     title.grid(column=1, row=0)
 
-    headlands = []
-    headlands.append(add_headland(root))
-    headlands[0].title = "AAAAAAAAAAAAA"
-    headlands[0].show()
-
     root.mainloop()
 
 if __name__ == "__main__":
