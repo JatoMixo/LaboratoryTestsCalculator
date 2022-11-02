@@ -2,9 +2,10 @@
 # - Twitter: @JatoMixo_Gamer
 # - Web: jatomixo.com
 from tkinter import *
+from Classes import headland
 
-def add_headland():
-    pass
+def add_headland(root):
+    return headland.Headland(root)
 
 def main():
     root = Tk()
@@ -18,7 +19,7 @@ def main():
     root.config(menu=headland_menu)
     
     root.title("JatoMixo - Laboratory Tests Calculator")
-    root.iconbitmap("D:/Miguel/Programas/LaboratoryTestsElaborator/test.ico")
+    root.iconbitmap("D:/Miguel/Programas/LaboratoryTestsElaborator/logo.ico")
     root.geometry("630x891")
 
     title_indicator = Label(root, text="Title: ")
@@ -26,6 +27,11 @@ def main():
 
     title = Entry(root, width=95)
     title.grid(column=1, row=0)
+
+    headlands = []
+    headlands.append(add_headland(root))
+    headlands[0].title = "AAAAAAAAAAAAA"
+    headlands[0].show()
 
     root.mainloop()
 
