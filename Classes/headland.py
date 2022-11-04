@@ -5,16 +5,13 @@ class Headland:
     def __init__(self, root):
         self.title = ""
         self.sub_headlands = []
-        self.paragraphs = []
+        self.paragraph = ""
         self.images = []
         self.graphs = []
         self.root = root
     
     def add_subheadland(self):
         self.sub_headlands.append(Headland())
-    
-    def add_paragraphs(self):
-        self.paragraphs.append("")
     
     def add_image(self):
         self.images.append("")
