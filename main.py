@@ -6,8 +6,13 @@ from Classes import headland
 
 headlands = [0]
 
-def add_headland(root):
-    headlands.append(headland.Headland(root))
+def add_headland(root, paragraph=0, image=0, graph=0):
+    new_title = Entry()
+    new_title.grid()
+
+    if paragraph != 0:
+        new_paragraph = Entry()
+        new_paragraph.grid()
 
 def main():
     # Window
@@ -21,7 +26,7 @@ def main():
     headland_add = Menu(headland_menu)
 
     # Navbar menus and commands
-    headland_add.add_command(label="New Headland", command="add_headland")
+    headland_add.add_command(label="New Headland", command=add_headland(root))
     headland_menu.add_cascade(label="Headland", menu=headland_add)
 
     root.config(menu=headland_menu)
@@ -43,7 +48,7 @@ def main():
     headlands_title_lbl.grid()
 
     # Headland Variables
-    headlands_objects = [
+    '''headlands_objects = [
         {
             "Title" : Entry(textvariable=headlands[0].title, width=95),
             "Paragraph" : Entry(textvariable=headlands[0].paragraph, width=95), 
@@ -53,7 +58,7 @@ def main():
 
     for h in headlands_objects:
         h["Title"].grid()
-        h["Paragraph"].grid()
+        h["Paragraph"].grid()'''
 
 
 
