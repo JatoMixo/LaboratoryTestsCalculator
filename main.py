@@ -3,30 +3,23 @@
 # - Web: jatomixo.com
 from tkinter import *
 from Classes import headland
+from os import system
 
-headlands = [0]
-
-def add_headland(root, paragraph=0, image=0, graph=0):
-    new_title = Entry()
-    new_title.grid()
-
-    if paragraph != 0:
-        new_paragraph = Entry()
-        new_paragraph.grid()
+headlands = []
 
 def main():
     # Window
     root = Tk()
 
     # First headland
-    headlands[0] = headland.Headland(root)
+    headlands.append(headland.Headland(root))
 
     # Navbar menus
     headland_menu = Menu(root)
     headland_add = Menu(headland_menu)
 
     # Navbar menus and commands
-    headland_add.add_command(label="New Headland", command=add_headland(root))
+    headland_add.add_command(label="New Headland", command=headland.add_headland(root, headlands))
     headland_menu.add_cascade(label="Headland", menu=headland_add)
 
     root.config(menu=headland_menu)
@@ -47,20 +40,8 @@ def main():
     headlands_title_lbl = Label(root, text="Headlands")
     headlands_title_lbl.grid()
 
-    # Headland Variables
-    '''headlands_objects = [
-        {
-            "Title" : Entry(textvariable=headlands[0].title, width=95),
-            "Paragraph" : Entry(textvariable=headlands[0].paragraph, width=95), 
-        },
-
-    ]
-
-    for h in headlands_objects:
-        h["Title"].grid()
-        h["Paragraph"].grid()'''
-
-
+    # Headlands
+    while 2 > 1: root.update()
 
     # Mainloop
     root.mainloop()
